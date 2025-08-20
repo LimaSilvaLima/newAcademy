@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jose S Lima">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <title>Prejeto Academy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Cabeçalho-->
+   <header th:fragment="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4527A0">
+            <a class="navbar-brand" th:href="@{/}">
+                <img src="img/logo_header-site.png" alt="logo" width="200px"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMobile"  aria-controls="navMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navMobile" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-search"></i> Pesquisar Aluno</a></li>
+                    <li class="nav-item"><a class="nav-link btn-danger text-white" href="#"><i class="fas fa-times" ></i> Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--footer-->
+    <footer th:fragment="rodape">
+        <div class="rodape">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>© 2025 Prejeto Academy. Todos os direitos reservados.</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>Desenvolvido por Jose S . Lima. Contato : limasilvalima@hotmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

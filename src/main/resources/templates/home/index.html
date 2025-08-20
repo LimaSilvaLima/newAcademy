@@ -11,50 +11,24 @@
     <title>Prejeto Academy</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4527A0" >
-            <a class="navbar-brand" href="#">
-                <img src="img/logo_header-site.png" alt="logo" width="200px"/>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMobile" >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navMobile" class="collapse navbar-collapse nav justify-content-end color: white;">
-                <a class="nav-item nav-link" href="#">Home</a> 
-                <a class="nav-item nav-link" href="#">Cadastrar Aluno</a> 
-                <a class="nav-item nav-link" href="#">Pesquisar Aluno</a>
-                <a class="nav-item nav-link btn-danger" href="#">Sair</a>
-            </div>  
-        </nav>
-    </header>
+    <th:block th:replace="fragmentos/fragmentos :: cabecalho"></th:block>
+    <!--<div th:replace="fragmentos/fragmentos :: cabecalho"></div>-->
     <section class="neo-section" style="background-image: url('img/bg-index.jpg');" >
         <div class="center  neo-container">
             <h1 class="texto-centro">Sistema de Gerenciamento de alunos</h1>
             <div class="sombra"></div>
             
-            <div class="botoes wb   nav justify-content-center">
+            <div class="botoes wm   nav justify-content-center">
                 <button type="button" class="bbtn btn btn-primary  m-5" >CADASTRAR ALUNO</button>  
-                <BUtton type="button" class="bbtn btn btn-primary  m-5">PESQUISAR ALUNO</BUtton>
+                <button type="button" class="bbtn btn btn-primary  m-5">PESQUISAR ALUNO</BUtton>
                 
             </div>
         </div>
 
     </section>
-    <footer>
-        <div class="rodape">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>© 2025 Prejeto Academy. Todos os direitos reservados.</p>
-                    </div>
-                    <div class="col-md-6 text-end">
-                        <p>Desenvolvido por Jose S . Lima. Contado : limasilvalima@hotmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="/webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+    <th:block th:replace="fragmentos/fragmentos :: rodape"></th:block>
 </body>
 </html>
