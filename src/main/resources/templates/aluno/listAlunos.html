@@ -13,7 +13,33 @@
 <body>
     <th:block th:replace="fragmentos/fragmentos :: cabecalho"></th:block>
     
-    
+    <div class="container" style="margin-top: 100px">
+        <hr>
+        <h3>ULTIMOS ALUNOS INCLUSOS</h3>
+        <hr>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">MATRICULA</th>
+                    <th scope="col">CURSO</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">TURNO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="aluno : ${alunosList}">
+                    <td th:text="${aluno.id}"></td>
+                    <td th:text="${aluno.nome}"></td>
+                    <td th:text="${aluno.matricula}"></td>
+                    <td th:text="${aluno.curso}"></td>
+                    <td th:text="${aluno.status}"></td>
+                    <td th:text="${aluno.turno}"></td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
 
     <th:block th:replace="fragmentos/fragmentos :: rodape"></th:block>
 

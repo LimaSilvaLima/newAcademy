@@ -32,12 +32,14 @@ public class AlunoController {
     }
 
     @GetMapping("/aluno/listAlunos")
-    public ModelAndView listAlunos() {
+    public ModelAndView listgemAlunos() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("aluno/listAlunos");
-        mv.addObject("alunos", alunoRepository.findAll());
+        mv.addObject("alunosList", alunoRepository.findAll());
         return mv;
     }
+
+    
         
 
 }
