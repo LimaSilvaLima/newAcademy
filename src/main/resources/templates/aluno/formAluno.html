@@ -12,35 +12,57 @@
 </head>
 <body>
     <th:block th:replace="fragmentos/fragmentos :: cabecalho"></th:block>
-    <div class="container" style="margin-top: 50px;">
+    <div class="container" style="margin-top: 10px;">
                 
-        <h4>+ Inserir Alunos</h4>
+        <h4>Inserir Alunos</h4>
         <form  method="post" action="/InsertAlunos" th:object="${aluno}">
            <!-- Campo Aluno -->
             <div class="row">
-                <div class="col-md- form-group offset-md-3">
-                        <label class=form-control for="">Nome do Aluno</label>
-                        <input type="text" class="form-control" th:field="*{nome}" placeholder="Digite o nome do aluno" required>
+                <div class="col-md-6 form-group offset-md-3">
+                    <label class=form-control for="">Nome do Aluno</label>
+                    <input type="text" class="form-control" th:field="*{nome}" placeholder="Digite o nome do aluno" required>
                 </div>
            </div>
            <!-- Campo Curso -->
             <div class="row">
-                <div class="col-md- form-group offset-md-3">
-                        <label class=form-control for="">Selecione o Curso</label>
-                        <select  class="form-control" id="">
-                            <option th:each="curso : ${T(com.academy.enums.Curso).values()}" th:value="${curso}" th:text="${curso}">
-                                <span th:text="${curso}"></span>
-                                <input type="hidden" th:field="*{curso}" th:value="${curso}"/>
-                            </option>
-                        </select>
-                </div>
-                <!-- Campo Matricula -->
-                <div class="row">
-                <div class="col-md- form-group offset-md-3">
+            <div class="col-md-6 form-group offset-md-3">
+                <label class="form-control" for="">Selecione o Curso</label>
+                <select class="form-control" th:field="*{curso}">
+                    <option th:each="curso : ${T(com.academy.enums.Curso).values()}" th:value="${curso}" th:text="${curso}"></option>
+                </select>
+            </div>
+        </div>
+            <!-- Campo Matricula -->
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
                     <label class=form-control for="">Gerar Matricula</label>
                     <input type="text" class="form-control" th:field="*{matricula}" required>
                     <button type="button"  onclick="GerarMatricula();" class="btn btn-dark" style="margin-top: 10px;" >Gerar</button>
+                </div>    
+            </div>
+            <!--Turno -->
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
+                    <label class=form-control for="">Turno</label>
+                    <input type="text" class="form-control"  placeholder="Manhã-Tarde-Noite"  th:field="*{turno}" required>
                 </div>
+           </div>
+            <!-- Status -->
+            <div class="row">
+                <div class="col-md-6 form-group offset-md-3">
+                        <label class=form-control for="">Selecione Status de matricula</label>
+                        <select  class="form-control" th:field="*{status}" id="">
+                            <option th:each="status : ${T(com.academy.enums.Status).values()}" th:value="${status}" th:text="${status}">
+                            <input type="hidden" th:field="*{curso}" th:value="${curso}"/>
+                            </option>
+                        </select>
+                </div>
+           </div>
+           
+           <div class="row">
+                <button type="submit" class="btn btn-success  col-md-1 offset-md-3">SALVAR</button>
+                &nbsp;
+                <button type="button" class="btn btn-outline-danger col-md-1 offset-md-1">VOLTAR</button>
            </div>
            </div>
             

@@ -8,6 +8,8 @@ import java.util.UUID;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,9 +34,11 @@ public class Aluno {
     private UUID id;
     @Column(name = "nome")
     private String nome;
+    @Enumerated(EnumType.STRING)
     private Curso curso;
     //@Column(name = "matricula", length = 200)
     private String matricula;
+    @Enumerated(EnumType.STRING)
     private Status status;
     private String turno;
  

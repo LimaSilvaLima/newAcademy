@@ -15,7 +15,7 @@ a{  cursor: pointer;
 }
 
 .neo-section{
-    min-height: 450px;
+    min-height: 430px;
     background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ a{  cursor: pointer;
     max-width: 1280px;
     padding: 2% 2%;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 90px;
 }
 
 .sombra{
