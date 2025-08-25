@@ -67,6 +67,16 @@ public class AlunoController {
         return mv;
     }
 
+    @GetMapping("/excluir/{id}")
+    public ModelAndView excluirAluno(@PathVariable("id") UUID id) {
+        ModelAndView mv = new ModelAndView();
+        alunoRepository.deleteById(id);
+        mv.setViewName("redirect:/aluno/listAlunos");
+        return mv;
+    }
+
+    
+
 
     
         
