@@ -4,9 +4,9 @@ import com.academy.enums.Status;
 import com.academy.enums.Curso;
 import java.util.UUID;
 
-
-
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -33,13 +33,20 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(name = "nome")
+    @Size(min=5, max = 35, message = "O nome deve ter minimo de 5 caracteres e no máximo 35 caracteres")
+    @NotBlank(message = "O nome é obrigatório")
     private String nome;
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "O curso é obrigatório")
     private Curso curso;
     //@Column(name = "matricula", length = 200)
+    @NotNull(message = "Click no botão gerar matrícula. é obrigatória")
     private String matricula;
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "O status é obrigatório")
     private Status status;
+    @Size(min=3, max = 8, message = "O turno deve ter no máximo 8 caracteres")
+    @NotBlank(message = "O turno é obrigatório")
     private String turno;
  
 

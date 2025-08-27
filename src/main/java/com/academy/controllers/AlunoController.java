@@ -5,12 +5,15 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.academy.model.Aluno;
 import com.academy.repository.AlunoRepository;
+
+import jakarta.validation.Valid;
 
 
 @Controller
@@ -30,10 +33,16 @@ public class AlunoController {
     
 
     @PostMapping("/insertAlunos")
-    public ModelAndView inserirAlunos(Aluno aluno) {
+    public ModelAndView inserirAlunos(@Valid Aluno aluno, BindingResult br) {
         ModelAndView mv = new ModelAndView();
+        if(br.hasErrors()) {
+        	mv.setViewName("aluno/formAluno");
+        	mv.addObject("aluno");
+        	return mv;
+        } else {
         mv.setViewName("redirect:/aluno/listAlunos");
         alunoRepository.save(aluno);
+        }
         return mv;
     }
 

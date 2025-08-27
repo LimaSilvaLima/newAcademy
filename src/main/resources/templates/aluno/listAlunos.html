@@ -20,7 +20,7 @@
         <table class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <!--<th scope="col">ID</th>-->
                     <th scope="col">NOME</th>
                     <th scope="col">MATRICULA</th>
                     <th scope="col">CURSO</th>
@@ -31,7 +31,7 @@
             </thead>
             <tbody>
                 <tr th:each="aluno : ${alunosList}">
-                    <td th:text="${aluno.id}"></td>
+                    <!--<td th:text="${aluno.id}"></td>-->
                     <td th:text="${aluno.nome}"></td>
                     <td th:text="${aluno.matricula}"></td>
                     <td th:text="${aluno.curso}"></td>
