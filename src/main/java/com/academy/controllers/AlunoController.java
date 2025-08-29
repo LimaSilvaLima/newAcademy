@@ -84,8 +84,49 @@ public class AlunoController {
         return mv;
     }
 
-    
+    @GetMapping("/filtro-alunos")
+    public ModelAndView filtroAlunos() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/filtroAlunos");
+        return mv;
+    }
 
+    @GetMapping("/alunos-ativos")
+    public ModelAndView listaAlunosAtivos() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/alunos-ativos");
+        mv.addObject("alunosAtivos", alunoRepository.findByStatusAtivos());
+        return mv;
+    }
+
+    @GetMapping("/alunos-trancados")
+    public ModelAndView listaAlunosTrancados() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/alunos-trancados");
+        mv.addObject("alunosTrancados", alunoRepository.findByStatusTrancados());
+        return mv;
+    }
+    @GetMapping("/alunos-inativos")
+    public ModelAndView listaAlunosInativos() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/alunos-inativos");
+        mv.addObject("alunosInativos", alunoRepository.findByStatusInativos());
+        return mv;
+    }
+    @GetMapping("/alunos-concluidos")
+    public ModelAndView listaAlunosConcluidos() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/alunos-concluidos");
+        mv.addObject("alunosConcluidos", alunoRepository.findByStatuscConcluido());
+        return mv;
+    }
+    @GetMapping("/alunos-cancelados")
+    public ModelAndView listaAlunosCancelados() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/alunos-cancelados");
+        mv.addObject("alunosCancelados", alunoRepository.findByStatuscConcluido());
+        return mv;
+    }
 
     
         

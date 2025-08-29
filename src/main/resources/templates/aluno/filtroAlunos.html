@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jose S Lima">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <title>Filtrar Alunos | s</title>
+</head>
+<body>
+    <th:block th:replace="fragmentos/fragmentos :: cabecalho"></th:block>
+    <h4> FILTRO DE ALUNOS</h4>
+    <hr>
+    <form action="#"  method="get">
+        <div class="input-group col-6">
+            <input class="form-control" placeholder="Pesquise por nome do aluno..." />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2" >Pesquisar</button>
+            </div>
+        </div>
+    </form>
+    <div class="row" >
+        <div class="card ml-3" style="width: 18rem;">
+            <a th:href="@{/alunos-ativos}" class="btn btn-outline-primary" >
+                <img  class="card-img-top" th:src="@{/img/Alunos-Ativos.jpg}" alt="Foto Alunos ativos">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">Alunos Ativos no Sistema</h5>
+                <p class="card-text">Pesquise alunos ativos </p>
+                <a th:href="@{/alunos-ativos}" class="btn btn-outline-primary" > Clique aqui</a>
+            </div>
+        </div>
+        <!--Alunos inativos-->
+        <div class="card ml-3" style="width: 18rem;">
+            <img  class="card-img-top" th:src="@{/img/Alunos-Inativos.jpg}" alt="Foto Alunos ativos">
+            <div class="card-body">
+                <h5 class="card-title">Alunos Inativos</h5>
+                <p class="card-text">Pesquise por alunos inativos </p>
+                <a href="#" class="btn btn-outline-primary" > Clique aqui</a>
+            </div>
+        </div>
+        <!--Alunos concluidos-->
+        <div class="card ml-3" style="width: 18rem;">
+            <img  class="card-img-top" th:src="@{/img/Alunos-Cancelados.jpg}" alt="Foto Alunos concluidos">
+            <div class="card-body">
+                <h5 class="card-title">Alunos Concluidos</h5>
+                <p class="card-text">Pesquise alunos concluidos/p>
+                <a href="#" class="btn btn-outline-primary" > Clique aqui</a>
+            </div>
+        </div>
+        <!--Alunos trancados-->
+        <div class="card ml-3" style="width: 18rem;">
+            <img  class="card-img-top" th:src="@{/img/Alunos-Trancados.jpg}" alt="Foto Alunos ativos">
+            <div class="card-body">
+                <h5 class="card-title">Alunos Trancados</h5>
+                <p class="card-text">Pesquise por matriculas trancadas</p>
+                <a href="#" class="btn btn-outline-primary" > Clique aqui</a>
+            </div>
+        </div>
+    </div>
+    <th:block th:replace="fragmentos/fragmentos :: rodape"></th:block>
+    
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

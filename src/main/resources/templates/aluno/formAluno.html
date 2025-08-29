@@ -67,9 +67,11 @@
                         <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}" >
                             <label class="validation-message" th:errors="*{status}" ></label>
                         </div>
-                        <label class="form-label" for="status">Selecione Status de matrícula</label>
-                        <select class="form-select" th:field="*{status}">
-                            <option th:each="statusOpt : ${T(com.academy.enums.Status).values()}" th:value="${statusOpt}" th:text="${statusOpt}"></option>
+                        <label class=form-control for="">Selecione Status de matricula</label>
+                        <select  class="form-control" th:field="*{status}" id="">
+                            <option th:each="status : ${T(com.academy.enums.Status).values()}" th:value="${status}" th:text="${status}">
+                            <input type="hidden" th:field="*{curso}" th:value="${curso}"/>
+                            </option>
                         </select>
                 </div>
            </div>
