@@ -23,6 +23,7 @@
         </div>
     </form>
     <div class="row" >
+        <!--Alunos ativos-->
         <div class="card ml-3" style="width: 18rem;">
             <a th:href="@{/alunos-ativos}" class="btn btn-outline-primary" >
                 <img  class="card-img-top" th:src="@{/img/Alunos-Ativos.jpg}" alt="Foto Alunos ativos">
@@ -35,29 +36,35 @@
         </div>
         <!--Alunos inativos-->
         <div class="card ml-3" style="width: 18rem;">
-            <img  class="card-img-top" th:src="@{/img/Alunos-Inativos.jpg}" alt="Foto Alunos ativos">
+            <a th:href="@{/alunos-inativos}" class="btn btn-outline-primary" >
+                <img  class="card-img-top" th:src="@{/img/Alunos-Inativos.jpg}" alt="Foto Alunos ativos">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">Alunos Inativos</h5>
                 <p class="card-text">Pesquise por alunos inativos </p>
-                <a href="#" class="btn btn-outline-primary" > Clique aqui</a>
+                <a th:href="@{/alunos-inativos}" class="btn btn-outline-primary" > Clique aqui</a>
             </div>
         </div>
         <!--Alunos concluidos-->
         <div class="card ml-3" style="width: 18rem;">
-            <img  class="card-img-top" th:src="@{/img/Alunos-Cancelados.jpg}" alt="Foto Alunos concluidos">
+            <a th:href="@{/alunos-concluidos}" class="btn btn-outline-primary" >
+                <img  class="card-img-top" th:src="@{/img/Alunos-Concluidos.jpg}" alt="Foto Alunos Concluidos">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">Alunos Concluidos</h5>
                 <p class="card-text">Pesquise alunos concluidos/p>
-                <a href="#" class="btn btn-outline-primary" > Clique aqui</a>
+                <a th:href="@{/alunos-concluidos}" class="btn btn-outline-primary" > Clique aqui</a>
             </div>
         </div>
         <!--Alunos trancados-->
         <div class="card ml-3" style="width: 18rem;">
-            <img  class="card-img-top" th:src="@{/img/Alunos-Trancados.jpg}" alt="Foto Alunos ativos">
+            <a th:href="@{/alunos-trancados}" class="btn btn-outline-primary" >
+                <img  class="card-img-top" th:src="@{/img/Alunos-Trancados.jpg}" alt="Foto Alunos trancados">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">Alunos Trancados</h5>
                 <p class="card-text">Pesquise por matriculas trancadas</p>
-                <a href="#" class="btn btn-outline-primary" > Clique aqui</a>
+                <a th:href="@{/alunos-trancados}" class="btn btn-outline-primary" > Clique aqui</a>
             </div>
         </div>
     </div>

@@ -99,13 +99,7 @@ public class AlunoController {
         return mv;
     }
 
-    @GetMapping("/alunos-trancados")
-    public ModelAndView listaAlunosTrancados() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("aluno/alunos-trancados");
-        mv.addObject("alunosTrancados", alunoRepository.findByStatusTrancados());
-        return mv;
-    }
+    
     @GetMapping("/alunos-inativos")
     public ModelAndView listaAlunosInativos() {
         ModelAndView mv = new ModelAndView();
@@ -120,13 +114,15 @@ public class AlunoController {
         mv.addObject("alunosConcluidos", alunoRepository.findByStatuscConcluido());
         return mv;
     }
-    @GetMapping("/alunos-cancelados")
-    public ModelAndView listaAlunosCancelados() {
+
+    @GetMapping("/alunos-trancados")
+    public ModelAndView listaAlunosTrancados() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("aluno/alunos-cancelados");
-        mv.addObject("alunosCancelados", alunoRepository.findByStatuscConcluido());
+        mv.setViewName("aluno/alunos-trancados");
+        mv.addObject("alunosTrancados", alunoRepository.findByStatusTrancados());
         return mv;
     }
+   
 
     
         
