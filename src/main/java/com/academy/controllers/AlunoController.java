@@ -32,17 +32,18 @@ public class AlunoController {
 
     
 
+    
+
     @PostMapping("/insertAlunos")
     public ModelAndView inserirAlunos(@Valid Aluno aluno, BindingResult br) {
         ModelAndView mv = new ModelAndView();
         if(br.hasErrors()) {
         	mv.setViewName("aluno/formAluno");
-        	mv.addObject("aluno");
+        	mv.addObject("aluno", aluno); // Passa o objeto com os erros de volta para a view
         	return mv;
-        } else {
+        }
         mv.setViewName("redirect:/aluno/listAlunos");
         alunoRepository.save(aluno);
-        }
         return mv;
     }
 
@@ -122,6 +123,16 @@ public class AlunoController {
         mv.addObject("alunosTrancados", alunoRepository.findByStatusTrancados());
         return mv;
     }
+
+    @GetMapping("/pesquisar-aluno")
+    public ModelAndView pesquisarAluno(@Valid Aluno aluno) {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("aluno/pesquisarAluno");
+        mv.addObject("alunoPesquisa", new Aluno());
+        
+        return mv;
+    }        
+
    
 
     
