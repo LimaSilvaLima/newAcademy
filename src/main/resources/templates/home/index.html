@@ -33,7 +33,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <!-- Corpo do Modal-->
-                <form method="post" th:action="@{/pesquisar-aluno}" th:object="${alunoPesquisa}">
+                <form method="post" th:action="@{/pesquisar-aluno-nome}" th:object="${alunoPesquisa}">
                     <div class="modal-body">
                         <input type="text" th:field="*{nome}" class="form-control" placeholder="Digite o nome do aluno"/>
                         <!--<button type="submit" class="btn btn-primary mt-3">Pesquisar</button>  -->

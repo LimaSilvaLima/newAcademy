@@ -22,5 +22,10 @@ public interface AlunoRepository  extends JpaRepository<Aluno, UUID> {
     @Query("SELECT a FROM Aluno a WHERE a.status = 'CONCLUIDO'")
     public List<Aluno> findByStatuscConcluido();
 
+    //public List<Aluno> findByNomeAlunos(String nomeAluno);
+
+
+    public List<Aluno> findByNomeContainingIgnoreCase(String nome);
+
 
 }

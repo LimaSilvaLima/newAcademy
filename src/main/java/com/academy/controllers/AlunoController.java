@@ -1,5 +1,6 @@
 package com.academy.controllers;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID; 
 
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.academy.model.Aluno;
 import com.academy.repository.AlunoRepository;
 
@@ -133,6 +136,21 @@ public class AlunoController {
         return mv;
     }        
 
+    @PostMapping("/pesquisar-aluno-nome")
+    public ModelAndView pesquisarAlunoPorNome(@RequestParam(required = false) String nome) {
+        ModelAndView mv = new ModelAndView();
+        List<Aluno> alunosEncontrados = alunoRepository.findByNomeContainingIgnoreCase(nome);
+        if(nome == null || nome.isEmpty() || alunosEncontrados.isEmpty()) {
+        	mv.setViewName("aluno/pesquisarAlunoResultado");
+        	//mv.addObject("mensagem", "Nenhum aluno encontrado com o nome: " + nome);
+            alunosEncontrados = alunoRepository.findAll();
+        } else {
+            mv.addObject("alunosEncontrados", alunoRepository.findByNomeContainingIgnoreCase(nome));
+        }
+        mv.setViewName("aluno/pesquisarAlunoResultado");
+        mv.addObject("alunosEncontrados", alunosEncontrados);
+        return mv;
+    }
    
 
     
