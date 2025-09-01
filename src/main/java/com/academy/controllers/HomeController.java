@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
     
-    @GetMapping("/")
+    @GetMapping("/index")
     public ModelAndView index() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("home/index");
