@@ -10,7 +10,28 @@
 }
 .Login-Form  {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    justify-content: left;
+    /*text-align: center;*/
+}
+
+.main-div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-control {
+    background-color: burlywood;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #ccc;
 }
