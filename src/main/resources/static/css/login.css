@@ -33,5 +33,44 @@
     font-size: 16px;
     height: 45px;
     line-height: 45px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
+}
+
+form-group {
+    margin: 15px 0 15px 0;
+    margin-bottom: 15px;
+}
+
+/*
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+*/
+.btn.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 38px;
+    line-height: 45px;
+    width: 80%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #0056b3;  
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

@@ -19,4 +19,13 @@ public class UsuarioController {
         return mv;
 	}
 
+	@GetMapping("/cadastro")
+	public  ModelAndView cadastrarUsuario() {
+		ModelAndView mv = new ModelAndView();
+        mv.setViewName("login/cadastro");
+       // mv.addObject("usuario", new Usuario());
+        return mv;
+	}
+
+
 }

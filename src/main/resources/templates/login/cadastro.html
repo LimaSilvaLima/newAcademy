@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jose S Lima">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <title>Prejeto Academy - LOGIN</title>
+</head>
+<body>
+    <th:block th:replace="fragmentos/fragmentos :: cabecalho"></th:block>
+    <!--<div th:replace="fragmentos/fragmentos :: cabecalho"></div>-->
+   
+   <div class="Login-Form" >
+    <h1>Login   </h1> 
+        <div class="container" >
+            <div class="main-div">
+                <div class="texto-header" >
+                    <h2>Bem Vindo!</h2>
+                    <br>
+                    <h2>Admin Login</h2>
+                    <p>Por favor, insira e-mail e senha para acessar sua conta.</p>
+                </div>
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="username" placeholder="Nome de Usuário" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="username" placeholder="Digite Senha" required>
+                    </div>
+                    <div class="cadastro">
+                        <a href="/cadastro">Não tem uma conta? Cadastre-se</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="button" class="btn btn-info">Voltar</button>
+                </form>
+            </div>
+        </div>
+   </div>
+   
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.1/js/bootstrap.min.js"></script>
+    <th:block th:replace="fragmentos/fragmentos :: rodape"></th:block>
+</body>
+</html>
