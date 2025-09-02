@@ -82,6 +82,7 @@ a{  cursor: pointer;
     padding: 20px 0;
     text-align: center;
     font-size: 1.00em;
+    /*background-image: url('../img/bg-login.jpg');*/
 }
 @media screen and (max-width: 667px) {
 
