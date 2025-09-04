@@ -30,7 +30,7 @@ public class Usuario {
     private UUID id;
     @Size(min=5, max = 35, message = "O usuario deve ter minimo de 5 caracteres e no máximo 35 caracteres")
     @NotBlank(message = "O usuario é obrigatório")
-    private String usuario;
+    private String nomeusuario;
     @Email(message = "Email inválido")
     @NotBlank(message = "O email é obrigatório")
     private String email;
