@@ -7,14 +7,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.academy.model.Usuario;
-import com.academy.repository.UsuarioRepository;
+import com.academy.service.ServiceUsuario;
 
 @Controller
 public class UsuarioController {
-    
-	@Autowired
-	private UsuarioRepository usuarioRepository;
-
+    @Autowired
+	private ServiceUsuario serviceUsuario;
+	
 	@GetMapping("/")
 	public  ModelAndView login() {
 		ModelAndView mv = new ModelAndView();
@@ -32,13 +31,13 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/salvarUsuario")
-	public ModelAndView salvarUsuario(Usuario usuario) {	
+	public ModelAndView salvarUsuario(Usuario usuario) throws Exception {	
 		ModelAndView mv = new ModelAndView();
-		usuarioRepository.save(usuario);
-		// Redireciona para a URL raiz ("/") que é mapeada para o método login()
+		//usuarioRepository.save(usuario); //enviado para classe ServiceUsuario
+		serviceUsuario.salvarUsurio(usuario);
 		mv.setViewName("redirect:/");
 		return mv;
-	};
+	}
 
 
 }
