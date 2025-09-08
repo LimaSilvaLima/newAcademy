@@ -2,6 +2,7 @@ package com.academy.service;
 
 import java.security.NoSuchAlgorithmException;
 
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,15 @@ public class ServiceUsuario {
     public void salvarAluno(Aluno aluno) {
         // Lógica para salvar o aluno
     }   
+
+    
+public Usuario loginUser(String email, String senha) throws ServiceException {
+    
+    Usuario userLogin = usuarioRepository.findByEmail(email);
+    
+    return usuarioRepository.buscarLogin(email, senha);
+}
+
+
+    
 }
