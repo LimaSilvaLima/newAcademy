@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.academy.exceptions.CriptoExistException;
 import com.academy.exceptions.EmailExistsException;
+import com.academy.exceptions.ServiceExceptionThis;
 import com.academy.model.Aluno;
 import com.academy.model.Usuario;
 import com.academy.repository.UsuarioRepository;
@@ -20,31 +21,29 @@ public class ServiceUsuario {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public void salvarUsurio(Usuario usuario) throws Exception {
+    public void salvarUsurio(Usuario user) throws Exception {
         try {
-            if(usuarioRepository.findByEmail(usuario.getEmail()) != null) {
-                throw new EmailExistsException("Já existe um usuário com esse email cadastrado." + usuario.getEmail());
+            if(usuarioRepository.findByEmail(user.getEmail()) != null) {
+                throw new EmailExistsException("Já existe um usuário com esse email cadastrado." + user.getEmail());
             }
-            usuario.setSenha(Util.md5(usuario.getSenha()));
+            user.setSenha(Util.md5(user.getSenha()));
             
             
         } catch (NoSuchAlgorithmException e) {
             throw new CriptoExistException("Erro na cripitografia da senha" );
            
         }
-        usuarioRepository.save(usuario);
+        usuarioRepository.save(user);
     }
 
-    public void salvarAluno(Aluno aluno) {
-        // Lógica para salvar o aluno
-    }   
+     
 
     
-public Usuario loginUser(String email, String senha) throws ServiceException {
+public Usuario loginUser(String email, String senha) throws ServiceExceptionThis {
     
-    Usuario userLogin = usuarioRepository.findByEmail(email);
+    Usuario userLogin = usuarioRepository.buscarLogin(email, senha);
+    return userLogin;
     
-    return usuarioRepository.buscarLogin(email, senha);
 }
 
 
