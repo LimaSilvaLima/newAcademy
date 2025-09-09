@@ -16,6 +16,7 @@ import com.academy.service.ServiceUsuario;
 import com.academy.util.Util;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @Controller
 public class UsuarioController {
@@ -48,7 +49,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/login")
-	public ModelAndView login(Usuario usuario, BindingResult br, HttpSession session ) throws NoSuchAlgorithmException, ServiceExceptionThis {
+	public ModelAndView login(@Valid Usuario usuario, BindingResult br, HttpSession session ) throws NoSuchAlgorithmException, ServiceExceptionThis {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("usuario", usuario); // Adiciona o usuário que veio do formulário para repopular em caso de erro
 		if(br.hasErrors()) {
