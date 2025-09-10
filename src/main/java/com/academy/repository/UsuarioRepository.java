@@ -2,7 +2,7 @@ package com.academy.repository;
 
 import java.util.UUID;
 
-import org.hibernate.service.spi.ServiceException;
+//import org.hibernate.service.spi.ServiceException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import com.academy.model.Usuario;

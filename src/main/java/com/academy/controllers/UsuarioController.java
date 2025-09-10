@@ -49,7 +49,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/login")
-	public ModelAndView login(@Valid Usuario usuario, BindingResult br, HttpSession session ) throws NoSuchAlgorithmException, ServiceExceptionThis {
+	public ModelAndView login( /*@Valid */ Usuario usuario, BindingResult br, HttpSession session ) throws NoSuchAlgorithmException, ServiceExceptionThis {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("usuario", usuario); // Adiciona o usuário que veio do formulário para repopular em caso de erro
 		if(br.hasErrors()) {
@@ -79,5 +79,13 @@ public class UsuarioController {
         
         return mv;
     }
+
+	@GetMapping("/logout")
+	public ModelAndView logout(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		session.invalidate(); // Invalida a sessão do usuário
+		mv.setViewName("redirect:/"); // Redireciona para a página de login
+		return mv;
+	}
 
 }

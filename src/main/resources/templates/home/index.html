@@ -11,6 +11,12 @@
     <title>Prejeto Academy</title>
 </head>
 <body>
+    <!--Alerta de boas vindas-->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>BEM VINDO : <span th:text="${session.usuarioLogado.nomeusuario}"></span> </strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     <th:block th:replace="fragmentos/fragmentos :: cabecalho"></th:block>
     <!--<div th:replace="fragmentos/fragmentos :: cabecalho"></div>-->
     <section class="neo-section" style="background-image: url('img/bg-index.jpg');" >
@@ -18,8 +24,8 @@
             <h1 class="texto-centro">Sistema de Gerenciamento de alunos</h1>
             <div class="sombra"></div>
             <div class="botoes wm   nav justify-content-center">
-                <button type="button" class="bbtn btn btn-primary  m-5" >CADASTRAR ALUNO</button>  
-                <button type="button" class="btn btn-primary  m-5" data-bs-toggle="modal" data-bs-target="#modalPesquisa">PESQUISAR ALUNO</button>
+                <a class="btn btn-primary m-5" th:href="@{/inserirAlunos}" role="button">CADASTRAR ALUNO</a>
+                <a type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#modalPesquisa">PESQUISAR ALUNO</a>
             </div>
         </div>
     </section>

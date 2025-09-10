@@ -35,16 +35,13 @@ public class ServiceUsuario {
         }
         usuarioRepository.save(user);
     }
-
-     
-
     
-public Usuario loginUser(String email, String senha) throws ServiceExceptionThis {
-    
-    Usuario userLogin = usuarioRepository.buscarLogin(email, senha);
-    return userLogin;
-    
-}
+    public Usuario loginUser(String email, String senha) throws ServiceExceptionThis {
+        
+        Usuario userLogin = usuarioRepository.buscarLogin(email, senha);
+        return userLogin;
+        
+    }
 
 
     
